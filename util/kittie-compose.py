@@ -31,9 +31,16 @@ import kittie_common
 
 
 import codar.savanna.machines as machines
-machines.adiosvm = machines.Machine('adiosvm', "slurm", "srun", machines.MachineNode, processes_per_node=4)
+machines.adiosvm = machines.Machine('adiosvm', "slurm", "srun", machines.MachineNode, processes_per_node=4, scheduler_options=dict(project="", queue="batch"))
 cheetah.machine_launchers.machine_launchers[machines.adiosvm] = cheetah.launchers.Launcher
 
+cori = Machine('cori', "slurm", "srun", MachineNode,
+               processes_per_node=32, node_exclusive=True,
+               dataspaces_servers_per_node=4,
+               scheduler_options=dict(project="",
+                                      queue="debug",
+                                      constraint="haswell",
+                                      license="SCRATCH,project"))
 
 def dict_representer(dumper, data):
     return dumper.represent_dict(data.items())
