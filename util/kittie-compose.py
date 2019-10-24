@@ -31,7 +31,7 @@ import kittie_common
 
 
 import codar.cheetah.machines
-codar.savanna.machines.adiosvm = codar.cheetah.machines.Machine('adiosvm', "slurm", "srun", codar.cheetah.machines.MachineNode, processes_per_node=4)
+codar.savanna.machines.adiosvm = codar.savanna.machines.Machine('adiosvm', "slurm", "srun", codar.savanna.machines.MachineNode, processes_per_node=4)
 
 
 def dict_representer(dumper, data):
