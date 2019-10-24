@@ -30,8 +30,8 @@ from collections import OrderedDict
 import kittie_common
 
 
-import codar.cheetah.machines
-codar.savanna.machines.adiosvm = codar.savanna.machines.Machine('adiosvm', "slurm", "srun", codar.savanna.machines.MachineNode, processes_per_node=4)
+import codar.savanna.machines as codar_machines
+codar_machines.adiosvm = codar_machines.Machine('adiosvm', "slurm", "srun", codar_machines.MachineNode, processes_per_node=4)
 
 
 def dict_representer(dumper, data):
