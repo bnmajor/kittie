@@ -35,8 +35,8 @@ import codar.savanna.machines as machines
 machines.adiosvm = machines.Machine('adiosvm', "slurm", "srun", machines.MachineNode, processes_per_node=4, scheduler_options=dict(project="", queue="batch"))
 cheetah.machine_launchers.machine_launchers[machines.adiosvm] = cheetah.launchers.Launcher
 
-local2 = Machine('local2', "local", "mpiexec", MachineNode, processes_per_node=1)
-machine_launchers[machines.local2] = launchers.Launcher
+machines.local2 = machines.Machine('local2', "local", "mpiexec", machines.MachineNode, processes_per_node=1)
+cheetah.machine_launchers[machines.local2] = cheetah.launchers.Launcher
 
 
 def dict_representer(dumper, data):
