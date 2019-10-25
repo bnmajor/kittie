@@ -36,7 +36,7 @@ machines.adiosvm = machines.Machine('adiosvm', "slurm", "srun", machines.Machine
 cheetah.machine_launchers.machine_launchers[machines.adiosvm] = cheetah.launchers.Launcher
 
 machines.local2 = machines.Machine('local2', "local", "mpiexec", machines.MachineNode, processes_per_node=1)
-cheetah.machine_launchers[machines.local2] = cheetah.launchers.Launcher
+cheetah.machine_launchers.machine_launchers[machines.local2] = cheetah.launchers.Launcher
 
 
 def dict_representer(dumper, data):
